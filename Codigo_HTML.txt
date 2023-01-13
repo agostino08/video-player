@@ -1,0 +1,602 @@
+Compiti: cos'è un'elemento e cos'è un'attributo / cos'è un'identificador
+
+
+
+--------HTML--------
+
+Ogni foglio HTML si inizia con !+(tasto tab) per riempire automaticamente l'<head> di quanto segue:
+
+<!DOCTYPE html> Indico che sto lavorando con un foglio HTML
+<html lang="en"> Imposto la lingua di lettura in questo caso inglese ( Sirve poco)
+<meta charset="UTF-8/> Serve per permettergli di riconoscere gli accenti
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/> Per abilitare l'apertura di questo file ocn internet explorer
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/> Per fare in modo che si adatti ad altri tipi di schermi
+<link href="/css/style.css" rel="stylesheet"/> Per indicare al foglio html di prendere gli stili da style.css
+
+-------Elementi HTML-------
+
+<head><title> Aqui va el titulo que quiero en la pestaña </title></head>
+<body> Aqui va el cuerpo de la pagina</body>
+<h1> Esto es el titulo 1 (Se puede seguir con "h2" / "h3" / "h4" etc.</h1>
+<p> Este es un parrafo </p>
+<br/> Para hacer un salto de linea
+<hr> Mostra una linea orizzontale
+<a href="www.amazon.com" </a> Esto sirve para meter un link en la pagina ( si añado a esta linea target="_blank" el link se abrira en otra pagina)
+<img src="imagenes/html5.png"/> para meter una imagen de archivo local que esta subida en visual studio code ( le immagini sono elementi inline, se ne metto 2 e ho uno spazio tra 1 e l'altra è perche devono stare attaccati gli elementi delle immagine sul html)
+
+<b> Per scrivere in grassetto</b>
+<strong> Visualmente si vede in grassetto ma il significato è che è importante</strong>
+<i>Scrive in corsivo</i>
+<em>Visualmente si vede in corsivo ma è per infatizzare</em>
+<small>Per fare il testo più piccolo</small>
+<mark> Per evidenziare</mark>
+<del>per tracciare una linea come se fosse cancellato</del>
+<ins>Per sottolineare il paragrafo</ins>
+<sub>Per mostrare il testo come sub indice</sub> Esempio più utilizzato <p>H<sub>2</sub>o</p> H2O
+<sup>Per mostrare il testo come super indice</sup>
+<pre> Tutto quello che scrivo all'interno verrà visualizzato rispettando gli spazi o i testa e a capo che inserisco </pre>
+
+--------Attributi per immagini--------
+
+alt="qui inserisco quello che voglio far leggere se manca l'immagine"
+title="qui inserisco quello che voglio far leggere se passo il cursore sopra"
+<code> si vede la scritta in un modo diverso serve per mostrare il codice di programmazione</code>
+
+-Qui ho tutti i codici per le lettere che non ho sulla tastiera o che vengono utilizzati in html es: <,>,@-
+
+Esempio: <p>&copy;</p> il simbolo della "C" di Copyright
+&nbsp; Serve per mettere uno spazio all'inizio del testo
+
+--------Email html--------
+
+<a href="mailto:lucianogermani@hotmail.com?subject=Contacto&body=prueba email">Enviar email</a>
+Subject sta per soggetto | Body sta per corpo della mail | & si usa per aggiungere un'altro attributo
+
+
+-Come aggiungere un font esterno al mio sito-
+
+dentro del index.html nell'head devo copiare il codice che mi da google https://fonts.google.com/specimen/Trocchi?category=Serif&preview.text=GEORGIA&preview.text_type=custom&sort=alpha
+
+
+Esempio
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap" rel="stylesheet">
+
+Allo stesso tempo nel foglio style.css dovrò indicare di applicare quel font, in questo caso alla caption quindi su style.css
+caption{ font-family: Trocchi,serif;}
+
+
+
+--------CSS--------
+
+Questi elementi si possono aggiungere al foglio di style
+padding: 15px; spazio tra il testo e il bordo
+border: 10px solid powderblue; grossore del bordo
+margin:50px; margine tra il bordo e la parte esterna
+Con solo 1 valore inserito viene utilizzato quel valore per la parte superiore/destra/inferiore/sinistra
+Per modificare i valori 1 ad 1 devo seguire quanto segue
+margin-top: 40px;
+margin-right: 10px;
+margin-bottom: 20px;
+margin-left: 10px;
+Questo si puo fare sia con margin che con border e padding
+Per semplificare si puo seguire quanto segue
+margin: 40px 10px 20px 10px
+Che stanno in questo oridne superiore / destra / inferiore / sinistra
+Se inserisco 3 valori funziona lo stesso ma 1 valore sarà rispettivamente per destra/sinistra o superiore/inferiore stesso ragionamento con 2 valori
+margin: auto 50 px centra in'automatico il contenuto, centrandosi in modo orizzontale ( non verticale)
+text-align: center; per centrare il testo basta usare text-align
+line-height: 70px; per definire un'altezza di spazio superiore e inferiore di un testo
+*{ all'interno posso inserire lo stile che voglio, questo stile verrà applicato a tutti gli elementi html presenti sulla pagina sempre e quando non ci sia nuovamente quell'elemnento all'interno di un h1 / <p> in questo caso verrà applicato quello che si trova all'interno di h1 / <p> visto che css funziona a cascata}
+
+Cada propriedad de CSS se separa con punto y coma
+style="color: red;" Il testo viene visualizzato in rosso
+<style="background-color:red;"> per dare il colore di sfondo ( si puo inserire anche il codice di colore in codice RGB
+Esempio:  <p style="color: crimson;">Color por nombre</p> OR <p style="color: rgb(220, 20, 60);">Color por codigo rgb</p> RGB= red green blue
+Bordo con colore + trasparenza (RGBA) <p style="border:10px solid rgba(220,20,60,0.5)">Color rgba con transparencia</p> RGBA = Red Green Blue Alpha ( Alpha sta per trasparenza può andare da 0 a 1 
+
+Per dare uno stile a un determinato elemento del body bisogna inserire <style></style> dentro <head></head>
+Esempio:
+
+<head>
+<style>
+h1{
+color: blue
+}
+</style>
+</head>
+
+
+
+Come aggiungere un commento in un foglio di style
+/* tutto quello che is trova all'interno non viene preso in considerazione*/
+
+
+--------Modificare il colore dei link Non visitato / visitato-------
+
+Crea un foglio di style.css 
+a:link{ color: #fb8500;} Questo modificherà il colore del link non visitato
+a:visited{color: #219ebc;} Questo modificherà il colore del link visitato
+text-decoration: none; per togliere la sottolineatura al link 
+a:hover{ #8ecae6;} questo modifica il colore quando passiamo sopra al link
+text-decoration: underline fa in modo che se passiamo sopra al link lo sottolinea ( nel caso in cui abbiamo tolto il text-decoration
+a:active{ color: #023047} Cambia la colorazione quando clicchiamo sul link
+
+display: inline-block; si usa su style.css per evitare che si sovrappongano gli style
+
+-Aggiungere immagine che funziona come un link:-
+
+ <a href="http://globalmentoring.com.mx" target="_blank">
+        <img src="http://globalmentoring.com.mx/imagenes/gm.png" alt="Logo GM"
+        style="width: 150px;height: 74px;">
+    </a>
+Link dove deve portarti l'immagine
+Immagine presa da libreria + tag alt="Logo GM" nel caso in cui non si veda l'immagine
+Stile con larghezza ed altezza.
+
+Tutti i titoli h1 del body saranno in colore blu.
+<!--Tutto quello che scrivo qui dentro viene ignorato-->
+
+Per dividere gli stili di CSS basta aggiungere un ;
+
+Font-size: 50px la dimensione del testo
+font-family: qui inserisco il font che voglio usare
+
+Come funziona un foglio Style.css
+posso immettere tutti gli elementi html all'interno del foglio per modificarli
+Se in html ho <caption>Listado de Personas</caption> o <th>Nombre</th> basterà inserire nel fogloi Style.css la paorla caption{stili da dare} o th{stili da dare}
+
+
+
+--------Tablas HTML--------
+
+<table></table> Crei la tabella, tutto il codice deve essere al suo interno
+<caption>Listado de Personas</caption> Permette di inserire un nome al di sopra della tabella ( deve stare subito sotto table)
+Table Header <th></th> crei il cabezero della tabella (+<th> ci sono piu opzioni metti) ES Grafic: Nome cognome Email si mette in grassetto e centrati da solo essendo table header
+Table Row<tr></tr> Crei la sottotabella +<tr> ci sono piu dividi in linee multiple)
+Table Data <td></td> Inserisci i dati, il <td> deve stare dentro il <tr>
+<table border="1"> per dare uno stile alla tabella con bordo "1"
+<th colspan="2">Nombre</th> permette di unire 2 colonne del table head in modo orizzontale
+<td rowspan="2">jperez@mail.com</td> permette di righe 2 celle in modo verticale
+
+-Applicare stili a tabella-
+Foglio style.css
+table,th,td{} Tutti gli stili verranno applicati alla tabella, al table head e al table data
+td{} Tutti gli stili verranno applicati al Table data
+
+-Bordi-
+border: 1px solid black; Dai un bordo, le dimensoini e il colore del bordo
+border-collapse: collapse; Fai in modo che sparisca il bordino di default questa è la normalità
+border-spacing:5px; se voglio invece dare una dimensione al bordo che viene di default
+padding: 5px; per creare lo spazio tra le informazioni all'interno del table data e il bordo
+
+table{width:100%;} se volgio che la tabella occupi il 100% dello spazio disponibile
+tr:nth-child(even)per applicare uno stile solo alle linee pari
+tr:nth-child(odd) per applicare uno stile solo alle linee dispari
+Esempio:
+/*reglones pares*/
+tr:nth-child(even){
+background-color: #f1faee;
+}
+/*reglones impares*/
+tr:nth-child(odd){
+    background-color: #a8dadc;
+}
+
+-------Liste HTML-------
+
+<ol></ol> Lista ordinata
+<ul></ul> Lista non ordinata
+<dl></dl> Lista di descrizione
+
+<li></li> List Item, elemento della lista deve andare all'interno di una delle liste sopra elencate. All'interno di <li> si mette il valore desiderato
+La lista avrà lo stile "disc" di default, per cambiarlo aggiungo uno style
+style="list-style-type: circle;" per far diventare i puntini della lista cerchi
+Posso creare una lista all'interno di una lista con questa sequenza
+   <ul>
+        <li>Luciano
+            <ul>
+                <li>Tel. 6464646464</li>
+                <li>email. mail.com</li>
+            </ul>
+        </li>
+        <li>Sandra</li>
+    </ul>
+
+Come creare una barra di navigazione con html + css
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="acerca.html">Acerca De</a></li>
+    </ul>
+
+Creiamo il foglio di style.css e andiamo ad inserire i valori.
+
+ul{    list-style-type: none;  }  Permette di togliere i punti della lista 
+ul{    overflow: hidden;    } Permette di far visualizzare questa unorder list come blocco indipendente dal resto
+
+li{    float: left;  } Permette di far muovere e affiancare tutti i dati all'interno di <li> 
+
+li a{  } Permette di modificare i links all'interno di <li>
+
+se aggiungo altri attributi come margin o padding 0 tolgo tutti gli spazi cosi si posiziona a sinistra
+
+li a:hover{    background-color: #1d3557;   } modificherà il colore quando passiamo sopra il link. (qui inizi a vedere il bottone definito)
+
+
+-------Liste Ordinate-------
+
+<ol> per default viene ordinato numericamente ma se aggiungo quanto segue
+<ol type="A"> l'ordine segue le lettere dell'alfabeto
+
+Nel foglio style.css posso fare in modo che prima dell'ordine numerico/Alfabetico ci sia un qualsiasi valore/scritta
+ol li::before{ content:"Curso"; } questo permette di inserire la parola "Curso" alla sinistra di ogni elemento della lista
+ol li::after{ content:"ciao";} questo permette di inserire la parola "ciao" alla destra di ogni elemento della lista
+
+Quanto segue spiegato dall'alto verso il basso
+All'interno di ol{ vado a modificare 2 elementi:
+list-style: none; per far in modo che non ci siano i numeri/lettere di default nella lista ordinata
+counter-reset: contador; riporta il conto a 0 in ogni nuova lista
+
+All'interno di ol{ vado a modificare 1 elemento:
+counter-increment:contador; questo fa in modo che per cada elemento della lista il contatore salga di +1 
+{ol li:: before{ all'interno modifico 1 elemento:
+content:"Curso" counter(contador); è la funzione che viene data ogni volta che si trova "curso" prima della lista applicherà le regole sopra elencate
+
+ol{
+    list-style: none;
+    counter-reset: contador;
+}
+ol li{
+    counter-increment: contador;
+}
+ol li::before{
+    content: "Curso" counter(contador);
+}
+ol li::after{
+    content: ".";
+}
+
+
+ol li::before{ content: "Curso" counter(contador) ") ";} Aggiungendo la parte finale ") " faccio in modo che dopo Curso e dopo la numerazione data dalla formula si possa aggiungere una parentesi con uno spazio ( o quello che voglio)
+
+
+-------Lista di descrizione-------
+
+Dentro <dl> troverò
+<dt> description list per inserire il termine della lista
+<dd> altro valore al'interno </dd> Description data, Questo creerà una sottolista di descrizione sarà un termine associato alla descrizione
+
+un'esempio:
+
+ <dl>
+     <dt>Java:</dt>
+     <dd>Creador: James Gosling</dd>
+     <dt>Phyton:</dt>
+     <dd>Creador: Guido van Rossum</dd>
+     <dt>JavaScript</dt>
+     <dd>Creador: Brendan Eich</dd>
+ </dl>
+
+
+
+-------Elementos inline y block-------
+
+Gli elementi inline occupano solo il loro spazio uno dopo l'altro mentre gli elementi block si posizionano a capo e occupano il 100% dello spazio disponibile
+No puedes centrar un elemento con margin si no tienes un elemento definido y si no es bloque
+<span> inline se aplican dentro de la misma linea en la que estamos trabajando
+<div> block se inician en una nueva linea y uno stile applicato a div prende tutto lo spazio disponibile. <div> serve per definire nuove sezioni di una pagina html
+
+Esempio:
+
+ <p>Texto donde vamos a
+        <span style="color: #e63946; border: 1px solid black;">enfatizar</span>
+        y cambiar el
+        <span style="color: #457b9d;font-weight: bold;">color de algunos elementos</span></p>
+
+ in questo modo applico uno stile alla parola "enfatizar" e alla frase "color de algunos elementos" senza modificare tutta la linea
+
+Come applicare stili diversi agli elementi <div> ?
+Prima di tutto sullo style.css inserisco .targeta{ qui metto gli stili che voglio applicare } N.B. la parola"targeta" puo essere rimpiazzata con quello che voglio l'importante è il . iniziale se voglio applicare + parole basta dividerle con - es: .titulo-berenjena
+una volta completato lo stile vaso su index.html e applico la classe
+<div class="targeta"> in questo modo sto dicendo che questa sezione di <div> deve prendere lo stile della classe "targeta" del foglio css. questo si puo aplicare anche agli altri elementi <h1> o <p> questo mi permette riutilizzare gli stile di css 
+<div class="targeta berenjena"> applico a questo div sia la classe "targeta" che la classe "berenjena"
+
+Se sul foglio .css aggiungo #seguito dalla parola che voglio andro ad applicare quello stile solo agli elementi che seguono questa identificazione ES:
+style.css 
+#titulo_principal{ color: black; text-aling:center;}
+index.html
+<h1 id="titulo_principal"> Lenguajes de programacion </h1>
+Cosi facendo gli stili di "titulo_principal" verranno applicati solo agli elementi che come id="titulo_principal"
+
+-------Bookmark-------
+
+Con le funzioni sotto elencate posso creare un link che mi riporti a una determinata sezione della pagina
+<h2 id="java">Java</h2> questo e il mio titulo h2 nella pagina ( si puo applicare anche nell'elemento <div> che di conseguenza il link mi porterà all'elemento div e non al titolo h2 
+In fondo alla mia pagina html posso inserire quanto segue:
+<a href="#Java">Java</a> in questo modo si visualizzerà un link in fondo alla pagina nel quale se clicco mi porterà al mio titolo h2
+
+-------iFrames en HTML-------
+
+Serve per far visualizzare all'interno della mia pagina un'altra pagina html / video/ documenti 
+<iframe> crea un rettangolo dove si visualizzerà la pagina html esterna/video/documento
+<iframe src="texto.html"> (SRC= source o origine dell'elemento da aggiungere ) in questo caso stiamo aggiungendo la pagina texto.html a quel iframe 
+Come modificare il contorno dell'iframe?
+Sul foglio style.css 
+.marco{
+    width: 100%;
+    height: 200PX;
+    border: none;
+}
+Sul foglio index.html aggiungo la class "marco"
+<iframe src="texto.html" class="marco"></iframe>
+
+Come caricare un sito web con un iframe?
+<iframe src="http://globalmentoring.com.mx" class="marco"></iframe>
+
+Come creare un tasto che se cliccato si carica l'iframe?
+<body>
+  <h1 class="titulo">Uso de iFrame en HTML</h1>
+  <iframe src="texto.html" name="marco1" class="marco"></iframe>
+  <a href="http://globalmentoring.com.mx" target="marco1">Cargar Sitio Global Mentoring</a>
+</body>
+
+Come modificare lo stilo di questo tasto per farlo somigliare ad un bottone?.
+Prima di tutto per centrare il link devo creare un <div> che fa riferimento a uno stile di .css quindi
+ <div class="central">
+  <a href="http://globalmentoring.com.mx" target="marco1">Cargar Sitio Global Mentoring</a>
+</div>
+
+e il riferimento di "central" lo creo in .css
+.central{
+    text-align: center;
+}
+
+-------Formularios en HTML-------
+
+Sirve para captar informacion del usuario (login contra fecha etc)
+<form></form> è l'etichetta che serve per creare il formulario
+All'interno di form posso inserire quanto segue
+<input type="text" id="nombre"/> Questo mi permette di immettere il rettangolo x un'eventuale login/data/passwd etc. id="nombre" non è necessario ma e utile aggiungere sempre un'identificazione per modificare gli stili
+ <input type="text" id="nombre" value="Carlos"/></br> il Value mi permette di far visualizzare nel mio formulario il nome "Carlos" 
+   <input type="text" id="nombre" name="nombre" value="Carlos"/></br> l'attributo name="nombre" fa in modo di far visualizzare questo parametro nella url e nel server
+    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre"/></br> l'attributo placeholder="Escribe ut nombre" verrà visualizzato nel rettangolo quando non selezionato
+<input type="submit" value="Enviar"/> Per poter creare un bottone con il nome "Enviar" per inviare l'informazione immessa nel formulario (serve x far ricevere le info a java)
+<input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required="true"/></br> l'attributo required="true" fa in modo che il campo sia richiesto, se provo ad inviare il formulario senza completare questo campo mi apparirà un messaggio 
+ <input type="number" id="edad" name="edad" step="any"/> <br/> step="any" fa in modo che se sto immettendo numeri si possano inserire numeri con la virgola e non dia errore
+<form novalidate> fa in modo che in tutto il form non sia richiesta una validazione
+<label>Nombre:</label> da il nome al formulario, viene messo sopra <input type="text"/>
+<label for="nombre">Nombre:</label> in questo caso l'attributo for="nombre" fa in moto che se clicco sopra Nombre: sul web mi viene selezionata la casella per immettere i dati in automatico
+
+-------Metodo Get y Metodo Post ( per default il metodo è get)-------
+
+Sono metodi per inviare i dati del formulario al server senza che si veda la info sensibile nella query string (ultima parte della url)
+<form method="get"> in questo modo si vedrà l'informazione inviata nel formulario nella query string
+<form method="post"> in questo modo NON si vedrà l'informazione inviata nel formulario della query string 
+
+--------Radiobuttons--------
+
+ <label>Genero</label></br>
+        <input type="radio" id="femenino" name="genero" value="femenino"/>
+        <label for="femenino">Femenino</label><br/>
+        <input type="radio" id="masculino" name="genero" value="masculino"/>
+        <label for="masculino">Masculino</label><br/>
+Questo è un'esempio di bottoni per scegliere il sesso. fai attenzinoe, per far si che si possa scegliere o uno o l'altro il campo name="genero" deve essere impostato cosi per entrambi
+
+--------Checkboxes--------
+
+<label>Genero Musica Favorita</label><br/>
+        <input type="checkbox" id="clasica" name="musica" value="clasica"/>
+        <label for="clasica">Clasica</label><br/>
+Questo è un'esempio di come fare un checkbox
+
+-------Elementos Selec--------
+
+Select
+<label for="autos">Marca auto favorita:</label><br/>
+        <select id="autos" name="autos">
+            <option value="volvo">Volvo</option>
+        </select>
+in questo modo creo una lista a selezione dove si sceglie l'auto preferita, in questo caso il valore che viene inviato al server è il valore value="volvo" 
+
+se <option value="audi" selected="true">Audi</option> il valore che si visualizzerà preimpostato in una lista di piu valori sarà in questo caso Audi
+se  <select id="autos" name="autos" multiple="true"> questo farà in modo di poter selezionare + di 1 scelta con il tasto control + click
+
+-------Elementos Textarea-------
+
+ <label for="comentario">Comentario:</label><br/>
+        <textarea id="comentario" name="comentario" rows="2" cols="30">
+Este es mi comentario
+        </textarea><br/>
+
+-------Fieldset y Legend en Formularios-------
+
+Serve per immettere tutto il formulario in un bordo è un'elemento visuale 
+tutti i label e input del formulario devono essere all'interno di <fieldset> e nel caso voglio aggiungere un titolo, subito dopo aprire <fieldset> immetto <legend>Titolo</legend>
+
+-------Atributos del elemento form en HTML-------
+
+<form action="mi_servidor"> stai dicendo a che url del sv inviare il formulario
+<form action="mi_servidor" target="_blank"> target="_blank"> una volta inviato il formulario si aprira una nuova pagina il risultato di esso
+<form action="mi_servidor" autocomplete="off"> serve per togliere l'autocompletazione dei campi 
+
+Altri elementi di tipo input
+<input type="reset" value="Restablecer"/> è un bottone che se cliccato riporta i valori immessi come vengono visualizzati inzialmente
+
+Testo non modificabile
+<label for="idpPersona">ID Persona:</label></br>
+            <input type="text" id="idPersona" name="idPersona" 
+            readonly="true" value="100"/></br>
+In questo modo andiamo ad inserire una casella del formulario preimpostata con un valore che non è modificabile dall'usuario e che verrà inviato al server
+
+<label for="idpPersona">ID Persona:</label></br>
+            <input type="text" id="idPersona" name="idPersona" 
+            readonly="true" value="100" disabled="true"/></br>
+In questo modo con l'attributo disabled="true" non sarà possibile modificare ne cliccare questa casella del formulario (in questo modo pero non viene inviata l'informazione al server)
+
+Inviare al server value senza farlo vedere all'usuario
+<input type="hidden" id="sistema" name="sistema" value="SAP"/> in questo modo verrà inviato il value SAP al server ma visivamente sulla pagina html l'usuario non vedra nulla
+
+-------Formulario LOGIN-------
+
+Parte HTML
+ <div class="contenedor">
+        <h2>Login</h2>
+        <form id="forma" name="forma" method="post">
+            <div class="elemento">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required="true"/>
+            </div>
+            <div class="elemento">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required="true"/>
+            </div>
+            <div class="elemento">
+                <input type="submit" value="Enviar"/>
+            </div>
+        </form>
+    </div>
+
+Parte CSS
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#7209b7, #3f37c0);
+}
+.contenedor{
+    margin: 50px auto;
+    width: 400px;
+    padding: 30px;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+.contenedor h2{
+    margin: 0 0 30px;
+    padding: 0;
+    font-size: 30px;
+    color: #4cc9f0;
+    text-align: center;
+}
+.contenedor .elemento label{
+    color: #fff;
+}
+.contenedor .elemento input{
+    width: 100%;
+    padding: 10px 0;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 30px;
+}
+.contenedor .elemento input[type="submit"]{
+   background-color: #f72585;
+   border: none;
+   letter-spacing: 5px;
+   text-transform: uppercase; 
+   cursor: pointer;
+   padding: 15px;
+   margin-top: 30px;
+}
+
+-------Elementos Semanticos-------
+
+------- HTML5 -------
+
+   <header>
+        <h1>Etiquetas Semanticas en HTML5</h1>
+    </header>
+è la testata 
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+        <a href="#">Acerca De</a>
+    </nav>
+è la barra di navigazione
+    <section>
+        <h2>Seccion 1</h2>
+        <p>Informacion de la seccion.</p>
+        <aside>
+            <p>Nombre del Autor</p>
+        </aside>
+    </section>
+    <section>
+        <h2>Seccion 2</h2>
+        <article>
+            <h3>Articulo 1</h3>
+        </article>
+        <article>
+            <h3>Articulo 2</h3>
+        </article>
+    </section>
+Sono le sezioni della pagina
+
+    <footer>
+        <h2>
+            <a href="http://www.globalmentoring.com.mx">
+                GlobalMentoring.com.mx
+            </a>
+        </h2>
+    </footer>
+è il piè di pagina 
+
+------- CSS -------
+
+header{
+    color: #f72585;
+    text-align: center;
+    font-size: 20px;
+}
+
+Questo da il colore, allinea il testo al centro e la fonte di 20px
+nav{
+    width: 20%;
+    float: left;
+}
+Fa in modo che la barra id navigazione sia spostata a sinistra e prenda uno spazio nella pagina di 20%
+
+nav a{
+    background-color: #f71570;
+    border-radius: 10px 0 10px 0;
+    color: #fff;
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+Fa in modo che i link nella barra di navigazione abbiano un background color, un bordo smussato un colore/margin/padding definito, non abbiano la sottolineatura del link e la funzione display block fa in modo che ogniuno prenda il suo spazio uno sotto l'altro
+section{
+    float: right;
+    width: 75%;
+    color: #7209b7;
+    border-radius: 5px;
+    box-shadow: 1px 0 4px rgb(0, 0, 0, .2);
+    margin-bottom: 15px;
+    padding: 15px;
+}
+Sono i vari stili applicati alle sezioni
+aside{
+    float: right;
+    width: 30%;
+    padding: 5px;
+    margin: 5px;
+    font-style: italic;
+    color: #4361ee;
+    box-shadow: inset 5px 0 5px -5px #4895ef;
+}
+Viene utilizzato per dare uno stile al nome dell'autore
+
+footer{
+    clear: both;
+    padding: 1px;
+    text-align: center;
+}
+clear:both serve per far posizionare il footer indipendentemente dalle altre sezioni nell'ultima linea disponibile
+footer a{
+    text-decoration: none;
+}
